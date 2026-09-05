@@ -41,10 +41,10 @@ int main() {
     SetTargetFPS(60);
 
     Texture2D btnStart = LoadTexture("nut_bam/start.png");
-    Texture2D btnUndo  = LoadTexture("nut_bam/di lai.png");
+    Texture2D btnUndo  = LoadTexture("nut_bam/di_lai.png");
     Texture2D btnExit  = LoadTexture("nut_bam/exit.png");
-    Texture2D iconX    = LoadTexture("nut_bam/nut X.png");
-    Texture2D iconO    = LoadTexture("nut_bam/nut O.png");
+    Texture2D iconX    = LoadTexture("nut_bam/nut_X.png");
+    Texture2D iconO    = LoadTexture("nut_bam/nut_O.png");
 
     ResetGame();
 
