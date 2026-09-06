@@ -1,0 +1,70 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Trang-1" id="NQLymff9iKmMbR8x13vz">
+    <mxGraphModel dx="1144" dy="624" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="jr1JZU184jiJ-LSPbcSR-5" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#e51400;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fontColor=#ffffff;strokeColor=#B20000;" value="Board" vertex="1">
+          <mxGeometry height="150" width="220" x="360" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="jr1JZU184jiJ-LSPbcSR-6" parent="jr1JZU184jiJ-LSPbcSR-5" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="- matrix: char[10][10]&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="39" width="220" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="jr1JZU184jiJ-LSPbcSR-7" parent="jr1JZU184jiJ-LSPbcSR-5" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="+ Board ()&lt;div&gt;+ printBoard(): void&lt;/div&gt;&lt;div&gt;+ checkWin(r: int, c: int): bool&lt;/div&gt;&lt;div&gt;+ isFull(): bool&lt;/div&gt;&lt;div&gt;+ isValidMove(r: int, c: int): bool&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="85" width="220" y="65" as="geometry" />
+        </mxCell>
+        <mxCell id="jr1JZU184jiJ-LSPbcSR-9" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;fillColor=#e51400;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fontColor=#ffffff;strokeColor=#B20000;" value="&lt;i&gt;&lt;b&gt;Player&lt;/b&gt;&lt;/i&gt;" vertex="1">
+          <mxGeometry height="173" width="340" x="360" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="jr1JZU184jiJ-LSPbcSR-10" parent="jr1JZU184jiJ-LSPbcSR-9" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="# name: std::string&lt;div&gt;# symbol: char&lt;/div&gt;" vertex="1">
+          <mxGeometry height="39" width="340" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="jr1JZU184jiJ-LSPbcSR-11" parent="jr1JZU184jiJ-LSPbcSR-9" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="+ Player(name: std::string, symbol: char)&lt;div&gt;+ ~Player()&lt;/div&gt;&lt;div&gt;+&amp;nbsp;&lt;i&gt;makeMove&lt;/i&gt;(board: vector&amp;lt;vector&amp;lt;char&amp;gt;&amp;gt;): pair&amp;lt;int, int&amp;gt; = 0&lt;/div&gt;&lt;div&gt;+ getName(): std::string&lt;/div&gt;&lt;div&gt;+ getSymbol(): char&lt;/div&gt;" vertex="1">
+          <mxGeometry height="104" width="340" y="69" as="geometry" />
+        </mxCell>
+        <mxCell id="jr1JZU184jiJ-LSPbcSR-13" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#fa6800;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fontColor=#000000;strokeColor=#C73500;" value="GameController" vertex="1">
+          <mxGeometry height="215" width="230" x="50" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="jr1JZU184jiJ-LSPbcSR-14" parent="jr1JZU184jiJ-LSPbcSR-13" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="- board: Board&lt;div&gt;- players: std::vector&amp;lt;Player*&amp;gt;&lt;/div&gt;&lt;div&gt;- currentTurn: int&lt;/div&gt;&lt;div&gt;- undoStack: std::stack&amp;lt;Move&amp;gt;&lt;/div&gt;&lt;div&gt;- redoStack: std::stack&amp;lt;Move&amp;gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;li&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;/li&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="85" width="230" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="jr1JZU184jiJ-LSPbcSR-15" parent="jr1JZU184jiJ-LSPbcSR-13" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="+ switchTurn(): void&lt;div&gt;&lt;div&gt;+ undo(): void&lt;/div&gt;&lt;div&gt;+ redo(): void&lt;/div&gt;&lt;/div&gt;&lt;div&gt;+ saveGame(filename: std::string): void&lt;/div&gt;&lt;div&gt;+ loadGame(filename: std::string): void&lt;/div&gt;&lt;div&gt;+ replayGame(filename: std::string): void&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="104" width="230" y="111" as="geometry" />
+        </mxCell>
+        <mxCell id="VZAVdzPUoV-rTAAVA_pq-6" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;fillColor=#bac8d3;strokeColor=#23445d;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;HumanPlayer&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ HumanPlayer(name: std::string, symbol: char)&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ makeMove(board: vector&amp;lt;vector&amp;lt;char&amp;gt;&amp;gt;): pair&amp;lt;int, int&amp;gt;&lt;/p&gt;" vertex="1">
+          <mxGeometry height="95" width="330" x="827" y="500" as="geometry" />
+        </mxCell>
+        <mxCell id="VZAVdzPUoV-rTAAVA_pq-7" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;fillColor=#bac8d3;strokeColor=#23445d;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;BotPlayer&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ BotPlayer(name: std::string, symbol: char)&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ makeMove(board: vector&amp;lt;vector&amp;lt;char&amp;gt;&amp;gt;): pair&amp;lt;int, int&amp;gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- blockOpponent(): pair&amp;lt;int, int&amp;gt;&lt;/p&gt;" vertex="1">
+          <mxGeometry height="104" width="330" x="827" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="VZAVdzPUoV-rTAAVA_pq-12" edge="1" parent="1" source="VZAVdzPUoV-rTAAVA_pq-6" style="edgeStyle=none;html=1;endSize=12;endArrow=block;endFill=0;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1.004;entryY=0.126;entryDx=0;entryDy=0;entryPerimeter=0;" target="jr1JZU184jiJ-LSPbcSR-9" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="826" y="555" as="sourcePoint" />
+            <mxPoint x="826" y="360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="VZAVdzPUoV-rTAAVA_pq-14" edge="1" parent="1" source="VZAVdzPUoV-rTAAVA_pq-7" style="edgeStyle=none;html=1;endSize=12;endArrow=block;endFill=0;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.999;entryY=0.061;entryDx=0;entryDy=0;entryPerimeter=0;" target="jr1JZU184jiJ-LSPbcSR-9" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="860" y="470" as="sourcePoint" />
+            <mxPoint x="700" y="380" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZBGPZDqqgxZc4sYKWJ_f-2" edge="1" parent="1" source="jr1JZU184jiJ-LSPbcSR-9" style="html=1;startArrow=diamondThin;startFill=0;edgeStyle=elbowEdgeStyle;elbow=vertical;startSize=10;endArrow=none;endFill=0;rounded=0;entryX=1;entryY=0;entryDx=0;entryDy=0;exitX=0;exitY=0;exitDx=0;exitDy=0;" target="jr1JZU184jiJ-LSPbcSR-13" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <Array as="points">
+              <mxPoint x="320" y="340" />
+            </Array>
+            <mxPoint x="340" y="390" as="sourcePoint" />
+            <mxPoint x="320" y="450" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZBGPZDqqgxZc4sYKWJ_f-3" edge="1" parent="1" source="jr1JZU184jiJ-LSPbcSR-13" style="html=1;labelBackgroundColor=#ffffff;jettySize=auto;orthogonalLoop=1;fontSize=14;rounded=0;jumpStyle=gap;edgeStyle=orthogonalEdgeStyle;startArrow=diamond;startFill=1;endArrow=open;strokeWidth=1;exitX=1.004;exitY=0.091;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.143;entryDx=0;entryDy=0;entryPerimeter=0;" target="jr1JZU184jiJ-LSPbcSR-5" value="">
+          <mxGeometry height="48" relative="1" width="48" as="geometry">
+            <mxPoint x="290" y="268" as="sourcePoint" />
+            <mxPoint x="338" y="220" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
