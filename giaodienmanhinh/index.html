@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gomoku Game</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 1. MÀN HÌNH MENU BAN ĐẦU -->
+    <div id="menu-screen" class="game-container">
+        <h1 class="title">GOMOKU</h1>
+        <div class="panel mode-panel">
+            <div class="mode-option">
+                <i class="fa-solid fa-user icon"></i>
+                <span>PLAYER vs PLAYER</span>
+                <i class="fa-solid fa-user icon"></i>
+            </div>
+            <div class="mode-option">
+                <i class="fa-solid fa-user icon"></i>
+                <span>PLAYER vs BOT</span>
+                <i class="fa-solid fa-robot icon"></i>
+            </div>
+        </div>
+        <div class="action-buttons">
+            <button id="start-btn" class="btn btn-main">START</button>
+            <button class="btn btn-sub"><i class="fa-solid fa-trophy"></i> LEADERBOARDS</button>
+        </div>
+        <div class="panel size-panel">
+            <div class="size-title"><span>KÍCH THƯỚC</span></div>
+            <div class="size-options">
+                <button class="btn-size">10x10</button>
+                <button class="btn-size">15x15</button>
+                <button class="btn-size">19x19</button>
+            </div>
+        </div>
+        <button class="btn btn-exit">EXIT</button>
+    </div>
+
+    <!-- 2. MÀN HÌNH BÀN CỜ -->
+    <div id="game-screen" class="game-play-container hidden">
+        <h1 class="game-header-title">GOMOKU - 10x10</h1>
+        
+        <div class="game-layout">
+            <!-- Cột trái -->
+            <div class="left-sidebar">
+                <div class="players-card">
+                    <div class="player-box">
+                        <i class="fa-solid fa-user player-icon"></i>
+                        <span class="p-name">Player 1</span>
+                        <span class="p-symbol symbol-x">✖</span>
+                        <div class="turn-badge">➔ ĐI TIẾP</div>
+                    </div>
+                    <div class="player-box">
+                        <i class="fa-solid fa-robot player-icon"></i>
+                        <span class="p-name">Player 2</span>
+                        <span class="p-symbol symbol-o">⭕</span>
+                        <div class="turn-badge">➔ ĐI TIẾP</div>
+                    </div>
+                </div>
+
+                <div class="panel control-panel">
+                    <div class="panel-header">BẢNG ĐIỀU KHIỂN</div>
+                    <div class="control-row">
+                        <button class="ctrl-btn"><i class="fa-solid fa-arrow-left"></i> ĐI LẠI</button>
+                        <button class="ctrl-btn"><i class="fa-solid fa-rotate-right"></i> KHÔI PHỤC</button>
+                    </div>
+                    <button id="save-btn" class="ctrl-btn full-btn"><i class="fa-solid fa-folder"></i> LƯU GAME</button>
+                    <button id="pause-btn" class="ctrl-btn full-btn"><i class="fa-solid fa-pause"></i> DỪNG GAME</button>
+                </div>
+            </div>
+
+            <!-- Bàn cờ + POPUP -->
+            <div class="board-wrapper">
+                <div id="board" class="gomoku-board"></div>
+
+                <!-- POPUP DỪNG GAME -->
+                <div id="pause-modal" class="win-modal hidden">
+                    <div class="win-box">
+                        <h2 class="win-title">TẠM DỪNG</h2>
+                        <div class="win-player"></div>
+                        <div class="win-divider"></div>
+                        <button id="resume-btn" class="win-btn">
+                            <i class="fa-solid fa-play"></i> TIẾP TỤC
+                        </button>
+                        <button id="quit-home-btn" class="win-btn">
+                            <i class="fa-solid fa-house"></i> VỀ TRANG CHỦ
+                        </button>
+                    </div>
+                </div>
+
+                <!-- POPUP THẮNG CUỘC -->
+                <div id="win-modal" class="win-modal hidden">
+                    <div class="win-box">
+                        <h2 class="win-title">THẮNG CUỘC</h2>
+                        <div class="win-player">PLAYER 1</div>
+                        <div class="win-divider"></div>
+                        <button id="replay-btn" class="win-btn">
+                            <i class="fa-solid fa-forward-step"></i> XEM LẠI TRẬN ĐẤU
+                        </button>
+                        <button id="win-home-btn" class="win-btn">
+                            <i class="fa-solid fa-house"></i> QUAY VỀ TRANG CHỦ
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cột phải: Bảng xếp hạng -->
+            <div class="right-sidebar">
+                <div class="panel leaderboard-panel">
+                    <div class="panel-header">BẢNG XẾP HẠNG</div>
+                    <div class="leaderboard-table">
+                        <div class="lb-header">
+                            <span>Hạng</span>
+                            <span>Người chơi</span>
+                        </div>
+                        <div class="lb-row"><span class="rank rank-1">1</span><span class="name">A</span></div>
+                        <div class="lb-row"><span class="rank rank-2">2</span><span class="name">B</span></div>
+                        <div class="lb-row"><span class="rank rank-3">3</span><span class="name">C</span></div>
+                        <div class="lb-row"><span class="rank">4</span><span class="name">D</span></div>
+                        <div class="lb-row"><span class="rank">5</span><span class="name"></span></div>
+                        <div class="lb-row"><span class="rank">6</span><span class="name"></span></div>
+                        <div class="lb-row"><span class="rank">7</span><span class="name"></span></div>
+                        <div class="lb-row"><span class="rank">8</span><span class="name"></span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
