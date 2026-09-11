@@ -1,0 +1,10 @@
+# Binaries and executables
+*.exe
+*.o
+*.obj
+*.out
+
+# Debug folders
+.vscode/*
+!.vscode/tasks.json
+!.vscode/launch.json
