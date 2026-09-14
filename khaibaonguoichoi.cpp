@@ -17,7 +17,6 @@ public:
 int main() {
     Player player1("Nguoi choi 1", 'X');
     Player player2("Nguoi choi 2", 'O');
-
     cout << player1.getName() << " (" << player1.getSymbol() << ")" << endl;
     cout << player2.getName() << " (" << player2.getSymbol() << ")" << endl;
 
