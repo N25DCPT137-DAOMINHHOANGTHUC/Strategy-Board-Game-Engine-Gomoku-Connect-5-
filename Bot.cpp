@@ -5,33 +5,45 @@
 
 using namespace std;
 
-const int BOARD_SIZE = 15; 
+const int BOARD_SIZE = 15;
 
 struct Move {
     int row;
     int col;
 };
 
-Move getRandomMove(const vector<vector<int>>& board) {
+/**
+ * AI ch?n ng?u nhiÍn m?t Ù tr?ng trÍn b‡n c?.
+ */
+Move getRandomMove(const vector<vector<int> >& board) {
     vector<Move> emptyCells;
 
+    // 1. Duy?t to‡n b? b‡n c? ? thu th?p t?t c? c·c Ù tr?ng
     for (int r = 0; r < BOARD_SIZE; ++r) {
         for (int c = 0; c < BOARD_SIZE; ++c) {
             if (board[r][c] == 0) {
-                emptyCells.push_back({r, c});
+                Move m;
+                m.row = r;
+                m.col = c;
+                emptyCells.push_back(m);
             }
         }
     }
 
+    // 2. N?u khÙng c?n Ù tr?ng n‡o
     if (emptyCells.empty()) {
-        return {-1, -1};
+        Move noMove;
+        noMove.row = -1;
+        noMove.col = -1;
+        return noMove;
     }
 
+    // 3. Ch?n ng?u nhiÍn 1 Ù trong danh s·ch c·c Ù tr?ng
     int randomIndex = rand() % emptyCells.size();
     return emptyCells[randomIndex];
 }
 
-void printBoard(const vector<vector<int>>& board) {
+void printBoard(const vector<vector<int> >& board) {
     cout << "   ";
     for (int c = 0; c < BOARD_SIZE; ++c) {
         if (c < 10) cout << c << "  ";
@@ -54,20 +66,21 @@ void printBoard(const vector<vector<int>>& board) {
 int main() {
     srand(time(NULL));
 
-    vector<vector<int>> board(BOARD_SIZE, vector<int>(BOARD_SIZE, 0));
+    // Kh?i t?o b‡n c? 15x15
+    vector<vector<int> > board(BOARD_SIZE, vector<int>(BOARD_SIZE, 0));
 
-    board[7][7] = 1; 
-    board[7][8] = 2; 
+    board[7][7] = 1;
+    board[7][8] = 2;
+
     cout << "--- BAN CO BAN DAU ---" << endl;
     printBoard(board);
 
- 
     cout << "\n--- TEST BOT CHON NUOC DI NGAU NHIEN ---" << endl;
     for (int i = 1; i <= 3; ++i) {
         Move botMove = getRandomMove(board);
         if (botMove.row != -1) {
-            cout << "Lan " << i << " -> Bot ch·ªçn √¥: Row " << botMove.row << ", Col " << botMove.col << endl;
-            board[botMove.row][botMove.col] = 2; 
+            cout << "Lan " << i << " -> Bot chon o: Row " << botMove.row << ", Col " << botMove.col << endl;
+            board[botMove.row][botMove.col] = 2;
         } else {
             cout << "Ban co da day!" << endl;
         }
