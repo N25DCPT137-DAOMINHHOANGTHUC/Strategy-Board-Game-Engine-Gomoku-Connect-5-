@@ -1,0 +1,4 @@
+FakerVN 0 2 1
+Rookie 1 2 1
+TheShy 2 1 0
+Chovy 1 0 0
