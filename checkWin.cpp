@@ -6,7 +6,7 @@ bool checkWin(int a[15][15], int x, int y, int player) {
     // 4 huong: 
     // (0, 1)  : ngang
     // (1, 0)  : doc 
-    // (1, 1)  :  \
+    // (1, 1)  :  '\'
     // (1, -1) :  /
     int dx[] = {0, 1, 1, 1};
     int dy[] = {1, 0, 1, -1};

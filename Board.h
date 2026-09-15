@@ -50,7 +50,6 @@ bool checkWin(int a[15][15], int x, int y, int player) {
 
     return false;
 }
-
 int main() {
     int a[15][15] = {0};
 
@@ -80,3 +79,4 @@ int main() {
 
     return 0;
 }
+
